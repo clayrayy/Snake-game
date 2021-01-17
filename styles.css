@@ -1,0 +1,158 @@
+/* *{ box-sizing: border-box;} */
+
+body {
+    background: rgb(27, 27, 27);
+    color: white;
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 100px 1fr 200px;
+    height: 100vh;
+    
+    
+}
+
+h1 {
+    margin: 0;
+    padding-top: 0;
+    font-family: 'Bungee Outline', cursive;
+    font-size: 3em;
+    letter-spacing: 10px;
+    word-spacing: 20px;
+    
+}
+
+.container {
+    background: rgb(31, 58, 27);
+    grid-row: 2/ 3
+}
+
+.btn {
+    background: rgb(24, 194, 38);
+    padding: 10px 25px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    border-radius: 15px;
+    font-family: 'Bungee Outline', cursive;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 8px;
+    word-spacing: 10px;
+    text-align: center;
+
+}
+
+.header {
+    text-align: center;
+    
+}
+
+.game-head {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores {
+    align-self: center;
+}
+
+#score {
+    padding-bottom: 2em;
+}
+
+.game-div {
+    border-radius: 20px;
+    /* top: 50%; */
+    margin: 5em auto;
+    width: 700px;
+    padding: 2em;
+    background-color: rgb(27, 27, 27);
+    box-shadow: 1em 1em 7em .1em black;
+
+}
+
+.board {
+    margin: 0 auto;
+    border: solid 1px white;
+    /* height:700px; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.gameSquare {
+    /* border-radius: 50%; */
+    width: 35px;
+    height: 35px;
+    background: url(/images/background.png);
+
+}
+
+.snake {
+ background:url("images/snake.png")
+}
+
+.apple {
+    background:url("images/apple.png");
+}
+
+#restartBtn {
+    background-color: rgba(24, 194, 38, .8);
+    padding: 10px 25px; 
+    margin: 2em auto;
+    font-size: 2rem;
+}
+
+
+
+.overlay {
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1;
+    display: none;
+    overflow: auto;
+}
+
+.modal {
+    border-radius: 25px;
+    display: flex;
+    color: black;
+    text-align: center;
+
+    background-image: url("https://s.pngkit.com/png/small/353-3538127_crying-kim-pinhype-kim-kardashian-emoji-hd.png"), linear-gradient(to bottom left,blue, red);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    background-size: cover;
+    background-blend-mode: color-dodge;
+    width:25%;
+    padding: 3em;
+    margin: 15% auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal h2 {
+    font-family: 'Bungee Outline', cursive;
+    color:rgb(194, 97, 32);
+    font-size: 3rem;
+    background:rgba(12, 37, 70, .8);
+    border-radius: 25px;
+    
+}
+
+@media (max-width: 800px) {
+    
+}
