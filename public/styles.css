@@ -1,0 +1,262 @@
+
+body {
+    background: rgb(47, 45, 58);
+    color: white;
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* display: grid; */
+    /* grid-template-rows: 100px 1fr; */
+    /* height: 100vh; */
+    
+    
+}
+header {
+/* display: ; */
+/* border: solid 1px magenta; */
+}
+
+h1 {
+    margin: 0;
+    padding-top: 0;
+    font-family: 'Bungee Outline', cursive;
+    font-size: 3rem;
+    letter-spacing: 5px;
+    /* word-spacing: px; */
+    
+}
+
+.size-selector-button {
+    padding: .75em 1em;
+    background-color: #7b211f;
+    border: none;
+    border-top: 5px green;
+}
+
+.selected {
+    color: white;
+    background-color: #54ab55;
+}
+
+.size-select {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn {
+
+    text-align: center;
+    margin: 1em;
+    padding: .2em .2em;
+    text-decoration: none;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    border-radius: 30px;
+    background-color: #54ab55;
+
+}
+
+.header {
+    text-align: center;
+    
+}
+
+.game-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scores {
+    align-self: center;
+}
+
+#score {
+    padding-bottom: 2em;
+}
+
+.game-div {
+    border-radius: 20px;
+    /* top: 50%; */
+    margin: 0 auto;
+    width: 90%;
+    min-width: 200px;
+    padding: 1em;
+    padding-bottom: 3em;
+    background-color: rgba(0,0,0,.5);
+    /* border: solid 1px magenta; */
+    /* box-shadow: 1em 1em 7em .1em black; */
+
+}
+.game-board-container {
+    height: 100%;
+    width: 100%;
+    /* border: solid 1px magenta; */
+}
+
+
+
+.board {
+    margin: 0 auto;
+    border: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.board-large {
+    height: 500px;
+    width: 500px;
+}
+
+.board-small {
+    height: 300px;
+    width: 300px;
+}
+
+.board-med {
+    height: 400px;
+    width: 400px;
+}
+
+.gameSquare {
+    /* border-radius: 50%; */
+    width: 25px;
+    height: 25px;
+    background: url('./images/new-bg.png');
+    /* border: solid 1px; */
+    background-size: cover;
+
+}
+
+
+.snake {
+ background: url('images/snakeboi.png');
+ background-size: cover;
+ max-width: 35px;
+
+}
+
+.apple {
+    background:url("images/new-apple.png");
+    max-width: 35px;
+    background-size: cover;
+}
+
+.restart-btn {
+    display: flex;
+    padding: 1em;
+    border-radius: 15px;
+}
+
+
+
+.overlay {
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 1;
+    display: none;
+    overflow: auto;
+}
+
+.modal {
+    border-radius: 15px;
+    display: flex;
+    color: black;
+    text-align: center;
+
+    background-image: url("https://s.pngkit.com/png/small/353-3538127_crying-kim-pinhype-kim-kardashian-emoji-hd.png"), linear-gradient(to bottom left,blue, red);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: color-dodge;
+    width:60%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 400px;
+    /* padding: 3em; */
+    margin: 15em auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal h2 {
+    /* font-family: 'Bungee Outline', cursive; */
+    color:rgb(194, 97, 32);
+    font-size: 1rem;
+    background:rgba(12, 37, 70, .8);
+    border-radius: 25px;
+    padding: .5em 1em;
+    
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    
+}
+
+.lose {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+
+.size-buttons-container {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    
+    
+}
+@media (min-width: 800px) {
+    .size-buttons-container {
+        max-width: 400px;
+    }
+    .gameSquare {
+        width: 35px;
+        height: 35px;
+    }
+    .board-large {
+        height: 700px;
+        width: 700px;
+    }
+    .board-small {
+        height: 420px;
+        width: 420px;
+    }
+    .board-med {
+        height: 560px;
+        width: 560px;
+    }
+
+    .game-div {
+        width: 700px;
+    }
+
+    .modal h2 {
+        font-size: 1.3rem;
+        /* color: green; */
+    }
+}
