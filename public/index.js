@@ -14,6 +14,7 @@ let width = 12
 let scoreCount = 0
 let speed = 0.96
 let timerId = 0
+let resizedLast = false
 
 let currentSnake = [65, 66, 67]
 
@@ -26,7 +27,9 @@ function startGame(size) {
       : [65, 66, 67]
   squares[appleIndex].classList.remove('apple')
   console.log(initialSnake)
-  currentSnake.map((x) => squares[x].classList.remove('snake'))
+  if (!resizedLast) {
+    currentSnake.map((x) => squares[x].classList.remove('snake'))
+  }
   currentSnake = initialSnake
   clearInterval(timerId)
   scoreCount = 0
@@ -39,7 +42,7 @@ function startGame(size) {
   largeBtn.disabled = true
   medBtn.disabled = true
   smallBtn.disabled = true
-  console.log(width)
+  resizedLast = false
 }
 
 function resizeBoard(boardSize) {
@@ -51,14 +54,16 @@ function resizeBoard(boardSize) {
       : boardSize === 'med'
       ? ['board-large', 'board-small']
       : ['board-med', 'board-large']
-  currentSnake.map((x) => squares[x].classList.remove('snake'))
+  // currentSnake.map((x) => squares[x].classList.remove('snake'))
   width = newWidth
   gameBoard.classList.add(`board-${boardSize}`)
   gameBoard.classList.remove(...classesToRemove)
   clearGrid()
   squares = []
   createGrid()
-  resize()
+  // resize()
+  generateApples()
+  resizedLast = true
 }
 
 function control(e) {
@@ -144,30 +149,23 @@ restart.addEventListener('click', function () {
   modalContainer.style.display = 'none'
 })
 
-function resize() {
-  generateApples()
-  squares[appleIndex].classList.remove('apple')
-  clearInterval(timerId)
-  scoreCount = 0
-  direction = 1
-  score[0].textContent = scoreCount
-  timeInterval = 500
-}
-
 smallBtn.addEventListener('click', () => {
   smallBtn.classList.add('selected')
   largeBtn.classList.remove('selected')
   medBtn.classList.remove('selected')
-  resizeBoard('small')})
+  resizeBoard('small')
+})
 
 medBtn.addEventListener('click', () => {
   medBtn.classList.add('selected')
   smallBtn.classList.remove('selected')
   largeBtn.classList.remove('selected')
-  resizeBoard('med')})
+  resizeBoard('med')
+})
 
 largeBtn.addEventListener('click', () => {
   largeBtn.classList.add('selected')
   smallBtn.classList.remove('selected')
   medBtn.classList.remove('selected')
-  resizeBoard('large')})
+  resizeBoard('large')
+})
